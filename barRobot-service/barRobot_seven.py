@@ -52,10 +52,8 @@ relay4 = OutputDevice(RELAY4_PIN, active_high=False, initial_value=False)
 _numM=0 #Anzahl der eingeworfenen MÃnzen
 
 
-#pygame.init()
-SONG_END = pygame.USEREVENT + 1
 pygame.mixer.music.set_endevent(SONG_END)
-file_path = 'sound/muenze1.wav'
+file_path = 'sound/muenzeinwurf_openmary/muenze1.wav'
 file_wav = wave.open(file_path)
 freq = file_wav.getframerate()
 print freq
@@ -70,14 +68,14 @@ _coinList = ['sound/Coins/131935__mcpable__coin-spinning.wav', 'sound/Coins/3697
 _sevenList = ['sound/sevenofnine/insertacoin.wav','sound/sevenofnine/pleasant_aftern_I_w_like_to_talk.wav','sound/sevenofnine/intoxicated.wav','sound/sevenofnine/the_capilars.wav','sound/sevenofnine/activity_unproductive.wav','sound/sevenofnine/activity_uno_use.wav']
 _currently_playing_song = None
 
-pygame.mixer.music.load("sound/muenze1.wav")
-sd_muenze1=pygame.mixer.Sound('sound/muenze1.wav')
-sd_muenze2=pygame.mixer.Sound('sound/muenze2.wav')
-sd_cocktail=pygame.mixer.Sound('sound/cocktail.wav')
-sd_button=pygame.mixer.Sound('sound/button.wav')
+pygame.mixer.music.load("sound/muenzeinwurf_openmary/muenze1.wav")
+sd_muenze1=pygame.mixer.Sound('sound/muenzeinwurf_openmary/muenze1.wav')
+sd_muenze2=pygame.mixer.Sound('sound/muenzeinwurf_openmary/muenze2.wav')
+sd_cocktail=pygame.mixer.Sound('sound/muenzeinwurf_openmary/cocktail.wav')
+sd_button=pygame.mixer.Sound('sound/muenzeinwurf_openmary/button.wav')
 sd_fun=pygame.mixer.Sound('sound/sevenofnine/fun.wav')
 sd_anothercoin=pygame.mixer.Sound('sound/sevenofnine/insertanothercoin.wav')
-sound1=pygame.mixer.Sound('1.wav')
+sound1=pygame.mixer.Sound('sound/sounds/1.wav')
 sd_coin1=pygame.mixer.Sound('sound/Coins/131935__mcpable__coin-spinning.wav')
 ###########
 print("--------------")
@@ -221,7 +219,7 @@ def muenze_eingeworfen():
             pygame.time.wait(100)  # ms
             print "Playing..."
         print "Finished."
-        pygame.mixer.music.load('sound/muenze2.wav')
+        pygame.mixer.music.load('sound/muenzeinwurf_openmary/muenze2.wav')
         pygame.mixer.music.play(-1)
         print _numM;
     if _numM>4:
@@ -229,7 +227,7 @@ def muenze_eingeworfen():
         pygame.mixer.music.play(0)
         while pygame.mixer.music.get_busy():
             pygame.time.wait(100)  # ms
-        pygame.mixer.music.load("sound/cocktail.wav")
+        pygame.mixer.music.load("sound/muenzeinwurf_openmary/cocktail.wav")
         pygame.mixer.music.play(-1)
         print _numM;
         
@@ -246,7 +244,7 @@ def sv_muenze_eingeworfen():
             pygame.time.wait(100)  # ms
             print "Playing..."
         print "Finished."
-        pygame.mixer.music.load('sound/sevenofnine/anothercoin.wav')
+        pygame.mixer.music.load('sound/sevenofnine/insertanothercoin.wav')
         pygame.mixer.music.play(-1)
         print _numM;
     if _numM>4:
@@ -254,7 +252,7 @@ def sv_muenze_eingeworfen():
         pygame.mixer.music.play(0)
         while pygame.mixer.music.get_busy():
             pygame.time.wait(100)  # ms
-        pygame.mixer.music.load("sound/cocktail.wav")
+        pygame.mixer.music.load("sound/muenzeinwurf_openmary/cocktail.wav")
         pygame.mixer.music.play(-1)
         print _numM;
 
